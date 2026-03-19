@@ -4,7 +4,8 @@ const express = require("express");
 
 const app = express();
 
-require("./config")(app);
+// middleware
+app.use(express.json());
 
 // index route
 const indexRoutes = require("./routes/index.routes");
