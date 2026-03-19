@@ -21,5 +21,8 @@ app.use("/api", exerciseRoutes);
 
 // error handling
 require("./error-handling")(app);
+app.get("/", (req, res) => {
+  res.send("API is running 🚀");
+});
 
 module.exports = app;
