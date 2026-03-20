@@ -55,4 +55,30 @@ router.delete("/:id", async (req: Request, res: Response) => {
   }
 });
 
+// UPDATE exercise
+router.put("/:id", async (req: Request, res: Response) => {
+try {
+const { id } = req.params as { id: string };
+const { name, sets, reps, weight, workoutId } = req.body;
+
+const data = await prisma.exercise.update({
+where: { id },
+data: {
+name,
+sets,
+reps,
+weight,
+workoutId
+}
+});
+
+res.json(data);
+} catch (error) {
+res.status(500).json({ error: "Error updating exercise" });
+}
+});
+
+
+
 export default router;
+
