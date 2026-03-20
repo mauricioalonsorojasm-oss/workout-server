@@ -1,23 +1,25 @@
-# Dependency directories
+# dependencies
 node_modules/
 
-# Debug log from npm
-npm-debug.log
+# build
+dist/
 
-# Environment Variables should NEVER be published
+# env variables
 .env
 
-# macOS
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
 .DS_Store
-.AppleDouble
-.LSOverride
-
-# Windows
 Thumbs.db
-Thumbs.db:encryptable
-ehthumbs.db
-*.lnk
 
+# IDE
+.vscode/
+.idea/
 
-# VS Code
-.vscode/*
+# prisma
+prisma/dev.db
+prisma/dev.db-journal
