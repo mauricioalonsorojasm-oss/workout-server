@@ -12,7 +12,7 @@ const app: Application = express();
 
 // middlewares
 app.use(morgan("dev"));
-app.use(cors());
+app.use(cors({origin: process.env.ORIGIN || "http://localhost:5173",}));
 app.use(express.json());
 
 // routes
