@@ -57,18 +57,25 @@ router.post("/", async (req: Request, res: Response) => {
 
 // UPDATE workout
 router.put("/:id", async (req: Request, res: Response) => {
-  try {
-    const { id } = req.params as { id: string };
+try {
+const { id } = req.params as { id: string };
+const { name, duration, calories, date } = req.body;
 
-    const data = await prisma.workout.update({
-      where: { id },
-      data: req.body
-    });
+const data = await prisma.workout.update({
+where: { id },
+data: {
+name,
+duration,
+calories,
+date: new Date(date),
+},
+});
 
-    res.json(data);
-  } catch (error) {
-    res.status(500).json({ error: "Error updating workout" });
-  }
+res.json(data);
+} catch (error) {
+console.error(error);
+res.status(500).json({ error: "Error updating workout" });
+}
 });
 
 // DELETE workout
