@@ -1,7 +1,0 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const app = require("./app");
-const PORT = process.env.PORT || 5005;
-app.listen(PORT, "0.0.0.0", () => {
-    console.log(`Server listening on port ${PORT}`);
-});

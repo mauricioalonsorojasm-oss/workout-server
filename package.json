@@ -1,26 +1,26 @@
 {
-  "name": "prisma-library-demo-server",
-  "version": "0.0.0",
+  "name": "workout-tracker-server",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
     "build": "tsc",
-    "start": "node dist/server.js",
-    "dev": "ts-node-dev src/server.ts"
-},
-
+    "start": "node dist/server.js"
+  },
   "dependencies": {
-    "@prisma/client": "5.10.2",
+    "@prisma/client": "^5.10.2",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.6",
     "dotenv": "^17.3.1",
-    "express": "^5.2.1",
+    "express": "^4.22.1",
     "morgan": "^1.10.1"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
-    "@types/node": "^25.5.0",
-    "nodemon": "^3.1.14",
-    "prisma": "5.10.2",
+    "@types/morgan": "^1.9.10",
+    "@types/node": "^20.0.0",
+    "prisma": "^5.10.2",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.9.3"
   }
