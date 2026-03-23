@@ -1,8 +1,10 @@
 import { Router, Request, Response } from "express";
 import { WorkoutStatus } from "@prisma/client";
 import prisma from "../db";
+import { verifyToken } from "../middleware/auth.middleware";
 
 const router = Router();
+router.use(verifyToken);
 
 const syncWeekCompletion = async (weekId: string) => {
   const workouts = await prisma.workout.findMany({
